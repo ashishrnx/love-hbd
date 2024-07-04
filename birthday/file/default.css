@@ -4,86 +4,157 @@ body {
   background-image: url('../img2.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: -100px 0;
-  /* Adjust the value as needed to shift the image more to the left */
+  background-position: center; /* Center background image */
   font-size: 14px;
   font-family: sans-serif;
   color: white;
   overflow: hidden;
-  /* Hide overflow to prevent white space */
 }
+
 a {
   color: white;
   font-size: 14px;
 }
+
+/* Main container to ensure full width */
 #main {
   width: 100%;
+  text-align: center; /* Center content horizontally */
 }
+
 #wrap {
   position: relative;
   margin: 0 auto;
-  width: 1100px;
-  height: 680px;
-  margin-top: 10px;
+  width: 100%;
+  max-width: 1100px; /* Max width for large screens */
+  height: auto; /* Adjust height to content */
+  padding: 10px; /* Add padding for responsiveness */
 }
+
 #text {
-  width: 272px;
-  height: 560px;
-  left: 188px;
-  top: 80px;
-  position: absolute;
+  width: 100%;
+  max-width: 272px; /* Limit text box width */
+  height: auto;
+  position: relative;
+  margin: 0 auto; /* Center the text box */
+  padding: 10px;
 }
+
 #code {
-  display: none;
+  display: block; /* Show code on small screens for better visibility */
   color: rgb(196, 255, 255);
-  font-size: 16px;
-  margin-top: 70px;
-  line-height: 25px;
-  font-size: larger;
+  font-size: 1em; /* Relative font size */
+  margin-top: 20px; /* Adjust margin for small screens */
+  line-height: 1.5em;
   font-weight: bolder;
 }
+
 #clock-box {
-  position: absolute;
-  left: 60px;
-  top: 550px;
-  font-size: 28px;
-  display: none;
+  position: relative;
+  font-size: 1.5em; /* Relative font size */
+  display: block;
+  margin: 20px auto;
 }
+
 #clock-box a {
-  font-size: 28px;
+  font-size: 1.5em;
   text-decoration: none;
 }
+
 #clock {
-  margin-left: 48px;
+  margin-left: 0;
 }
+
 #clock .digit {
-  font-size: 64px;
+  font-size: 2em; /* Responsive digit size */
 }
+
 #canvas {
-  margin: 0 auto;
-  width: 1100px;
-  height: 680px;
+  width: 100%;
+  height: auto; /* Adjust height to maintain aspect ratio */
+  max-width: 1100px; /* Limit max width for larger screens */
 }
+
 #error {
   margin: 0 auto;
   text-align: center;
-  margin-top: 60px;
-  display: none;
+  margin-top: 20px;
+  display: block; /* Show error message on small screens */
 }
+
 .hand {
   cursor: pointer;
 }
+
 .say {
-  margin-left: 5px;
+  margin-left: 0;
 }
+
 .space {
-  margin-right: 150px;
+  margin-right: 0; /* Adjust spacing for smaller screens */
 }
 
-#message-box{
-  position: absolute;
-  margin-top:450px;
-  font-size: 25px;
+#message-box {
+  position: relative;
+  margin-top: 20px; /* Adjust margin for smaller screens */
+  font-size: 1.5em; /* Relative font size */
   font-family: monospace;
+}
 
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  body {
+    background-position: center; /* Adjust background position for smaller screens */
+  }
+  
+  #text {
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 90%;
+  }
+
+  #code {
+    font-size: 1em; /* Adjust font size for smaller screens */
+    margin-top: 10px; /* Adjust margin for smaller screens */
+  }
+
+  #clock-box {
+    font-size: 1.2em; /* Adjust font size for smaller screens */
+  }
+
+  #clock .digit {
+    font-size: 1.5em; /* Adjust digit size for smaller screens */
+  }
+
+  #message-box {
+    font-size: 1.2em; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px; /* Adjust base font size for very small screens */
+  }
+
+  #text {
+    width: 100%;
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  #code {
+    font-size: 0.9em; /* Further adjust font size for very small screens */
+    margin-top: 5px; /* Further adjust margin for very small screens */
+  }
+
+  #clock-box {
+    font-size: 1em; /* Further adjust font size for very small screens */
+  }
+
+  #clock .digit {
+    font-size: 1.2em; /* Further adjust digit size for very small screens */
+  }
+
+  #message-box {
+    font-size: 1em; /* Further adjust font size for very small screens */
+  }
 }
